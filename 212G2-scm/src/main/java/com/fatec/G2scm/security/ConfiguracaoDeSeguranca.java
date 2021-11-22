@@ -17,8 +17,8 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/sig/cliente").hasAnyRole("ADMIN", "BIB") //
 				.antMatchers("/sig/cliente/{id}").hasRole("ADMIN") // somente login jose pode excluir
-				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-				.logoutUrl("/login?logout").permitAll();
+				.antMatchers("/cursos").hasRole("ADMIN").anyRequest().authenticated().and().formLogin()
+				.loginPage("/login").permitAll().and().logout().logoutUrl("/login?logout").permitAll();
 	}
 
 //configuração de autentificação

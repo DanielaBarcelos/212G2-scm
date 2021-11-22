@@ -22,7 +22,7 @@ public class HomeController {
 	}
 
 	@GetMapping("/Curso")
-	public ModelAndView cadastrarFornecedor() {
+	public ModelAndView cadastrarCurso() {
 		return new ModelAndView("cadastrarCurso");
 	}
 }
