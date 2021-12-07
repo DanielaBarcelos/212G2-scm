@@ -12,16 +12,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
-//conficuração de autorização
+// configuracao de autorizacao
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/sig/cliente").hasAnyRole("ADMIN", "BIB") //
-				.antMatchers("/sig/cliente/{id}").hasRole("ADMIN") // somente login jose pode excluir
-				.antMatchers("/cursos").hasRole("ADMIN").anyRequest().authenticated().and().formLogin()
-				.loginPage("/login").permitAll().and().logout().logoutUrl("/login?logout").permitAll();
+		http.authorizeRequests().antMatchers("/clientes").hasAnyRole("ADMIN", "VEND").antMatchers("/clientes")
+				.hasRole("ADMIN").antMatchers("/cursos").hasRole("ADMIN").antMatchers("/matriculas").hasRole("ADMIN")
+				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
+				.logoutSuccessUrl("/login?logout").permitAll();
 	}
 
-//configuração de autentificação
+// configuracao de autenticacao
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("jose").password(pc().encode("123")).roles("ADMIN").and()

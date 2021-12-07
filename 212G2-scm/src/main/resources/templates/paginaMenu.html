@@ -10,26 +10,25 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+	th:href="@{/css/estilo-menu.css}" />
 </head>
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Sistema Integrado de Gestão</a>
+				<a class="navbar-brand" href="#">Sistema de Controle de Matrículas</a>
 			</div>
+			<nav id= "menu">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a th:href="@{/sig/cliente}"> Clientes </a></li>
 				<li><a th:href="@{/sig/curso}"> Curso </a></li>
-				<li><a href="#">Page 2</a></li>
-				<li><a href="#">Page 3</a></li>
-				<li><a th:href="@{/login?logout}">Logout</a></li>
+				<li><a th:href="@{/sig/matricula}">Matriculas</a></li>
+			</nav>
 			</ul>
 		</div>
+		<img src="images/Tips-consejos-para-Aprender-Ingles.jpg" height="100%" width="100%"/>
 	</nav>
-	<div class="container">
-		<h3>Fatec Ferraz de Vaconcelos</h3>
-		<p>2021 2o. Semestre.</p>
-	</div>
 </body>
 </html>
