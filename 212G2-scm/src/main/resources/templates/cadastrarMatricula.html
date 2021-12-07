@@ -39,7 +39,7 @@
 								<label for="cpfCliente" class="col-form-label">CPF do
 									Cliente</label> <input type="text" th:field="*{cpfCliente}"
 									class="form-control" id="cpfCliente"
-									placeholder="CPF do Cliente"> <span
+									placeholder="CPF do Cliente"> <span style="color:Red;"
 									th:if="${#fields.hasErrors('cpfCliente')}"
 									th:errors="*{cpfCliente}" class="textdanger"> </span>
 							</div>
@@ -49,7 +49,7 @@
 								<label for="nomeCliente" class="col-form-label">Nome do
 									Aluno</label> <input type="text" th:field="*{nomeCliente}"
 									class="form-control" id="nomeCliente"
-									placeholder="Nome do Cliente"> <span
+									placeholder="Nome do Cliente"> <span style="color:Red;"
 									th:if="${#fields.hasErrors('nomeCliente')}"
 									th:errors="*{nomeCliente}" class="textdanger"> </span>
 							</div>
@@ -59,7 +59,7 @@
 								<label for="turmaCurso" class="col-form-label">Turma do
 									Curso</label> <input type="text" th:field="*{turmaCurso}"
 									class="form-control" id="turmaCurso"
-									placeholder="Turma do Curso"> <span
+									placeholder="Turma do Curso"> <span style="color:Red;"
 									th:if="${#fields.hasErrors('turmaCurso')}"
 									th:errors="*{turmaCurso}" class="textdanger"> </span>
 							</div>
